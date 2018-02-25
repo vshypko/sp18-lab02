@@ -1,11 +1,12 @@
 pragma solidity 0.4.19;
 
+import "./strings.sol";
 
 contract Concatenate {
-    function concatWithoutImport(string _s, string _t) public returns (string) {
-    }
+    using strings for *;
+    string public s;
 
-    /* BONUS */
-    function concatWithImport(string s, string t) public returns (string) {
+    function concat(string s1, string s2) returns (string) {
+        return s1.toSlice().concat(s2.toSlice());
     }
 }

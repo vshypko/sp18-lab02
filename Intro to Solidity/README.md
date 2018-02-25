@@ -1,3 +1,7 @@
+### COMPLETED BY:
+Vitali Shypko (vshypko@berkeley.edu)
+Yahor Yuzefovich (yuzefovich@berkeley.edu)
+
 # Simple Solidity Exercises
 
 *   A ‘greeter’ contract with a 'greet' method that returns the string “hello, World!”

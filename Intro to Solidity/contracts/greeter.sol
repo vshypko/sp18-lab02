@@ -8,5 +8,6 @@ contract Greeter {
     }
 
     function greet() public view returns (string) {
+        return "hello, World!";
     }
 }
