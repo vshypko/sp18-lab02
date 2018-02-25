@@ -1,5 +1,5 @@
 ### COMPLETED BY:
-Vitali Shypko (vshypko@berkeley.edu)
+Vitali Shypko (vshypko@berkeley.edu)  
 Yahor Yuzefovich (yuzefovich@berkeley.edu)
 
 # Simple Solidity Exercises
