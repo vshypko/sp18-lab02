@@ -52,7 +52,7 @@ contract Betting {
 
     modifier outcomeExists(uint outcome) {
         bool _exists = false;
-        for (uint i = 0; i < outcomes.length; i++){
+        for (uint i = 0; i < 2; i++){
             if (outcomes[i] == outcome) {
                 _exists = true;
                 break;
@@ -70,14 +70,14 @@ contract Betting {
 
     /* Gamblers place their bets, preferably after calling checkOutcomes */
     function makeBet(uint _outcome) public payable returns (bool) {
-        if (bets[msg.sender] != 0) {
+        if (bets[msg.sender].amount != 0) {
             return false;
         }
         bets[msg.sender] = Bet(_outcome, msg.value, true);
         BetMade(msg.sender);
-        if (bets.length == 1) {
+        if (gamblerA == address(0)) {
             gamblerA = msg.sender;
-        } else if (bets.length == 2) {
+        } else if (gamblerB == address(0)) {
             gamblerB = msg.sender;
             BetClosed();
         }
@@ -130,6 +130,5 @@ contract Betting {
         delete gamblerA;
         delete gamblerB;
         delete oracle;
-        delete outcomes;
     }
 }
